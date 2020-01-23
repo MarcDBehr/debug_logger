@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MassDelete</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>MassDelete</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT("/soap/ajax/9.0/connection.js")}
+
+var records = {!GETRECORDIDS( $ObjectType.DebugInfo__c)};
+
+if (records[0] == null) {
+  alert("Please select at least one record.") 
+} else {
+  var errors = [];
+  var result = sforce.connection.deleteIds(records);
+  if (result &amp;&amp; result.length){
+    var numFailed = 0;
+    var numSucceeded = 0;
+    for (var i = 0; i &lt; result.length; i++){
+      var res = result[i];
+      if (res &amp;&amp; res.success == 'true'){
+        numSucceeded++;
+      } else {
+        var es = res.getArray("errors");
+        if (es.length > 0) {
+          errors.push(es[0].message);
+        }
+        numFailed++;
+      }
+    }
+    if (numFailed > 0){
+      alert("Failed: " + numFailed + "\nSucceeded: " + numSucceeded + " \n Due to: " + errors.join("\n"));
+    } 
+  }
+  window.location.reload();
+}</url>
+</WebLink>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Platform event object to send debug logs from the DebugLog class. These can be captured by a lightning component for display to authorized users</description>
+    <eventType>StandardVolume</eventType>
+    <label>Debug Log</label>
+    <pluralLabel>Debug Logs</pluralLabel>
+</CustomObject>

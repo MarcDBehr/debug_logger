@@ -1,0 +1,16 @@
+{
+    "orgName": "Emerson",
+    "edition": "Enterprise",
+    "hasSampleData": false,
+    "features": "API;AuthorApex;ServiceCloud;DebugApex",
+    "settings": {
+        "orgPreferenceSettings": {
+            "s1DesktopEnabled": true
+        },
+        "securitySettings": {
+            "sessionSettings": {
+                "sessionTimeout": "TwelveHours"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Publish_Events__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Indicates if the Debug_Log Platform Event should be published after saving the event in the log</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>When set, will publish a Debug_Log Platform Event after saving the event in the log</inlineHelpText>
+    <label>Publish Events</label>
+    <type>Checkbox</type>
+</CustomField>
